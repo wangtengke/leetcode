@@ -22,19 +22,37 @@ import java.util.Map;
  **/
 public class DeleteColumnstoMakeSortedIII {
     public int minDeletionSize(String[] A) {
-        Map<String,Integer> map = new HashMap<>();
-        String[] arr = new String['n' - 'a' + 1];
-        for(int i = 0,j = 'a'; i < arr.length; i++,j++){
-            arr[i] = j+"";
-            map.put(String.valueOf(j),i+1);
-//            result += j+" ";//连起来，空格隔开
-        }
-        for(String str :A){
-           for (int i = 0;i<str.length();i++){
+        int[] dp = new int[A[0].length()];
+        int max = 1;
+        dp[0] = 1;
+        for(int i = 1; i < dp.length; i++){
+            dp[i] = 1;
+            for(int j = 0; j < i; j++){
+                boolean mark = true;
+                // if all characters in column i are greater than j then its a valid subsequence
+                for(String k : A){
+                    if(k.charAt(j) > k.charAt(i)){
+                        mark = false;
+                        break;
+                    }
 
-           }
+                }
+
+                if(mark)
+                    dp[i] = Math.max(dp[j] + 1, dp[i]);
+            }
+
+            max = Math.max(max,dp[i]);
         }
-        return 0;
+
+        return A[0].length() - max;
     }
 
+    public static void main(String[] args) {
+        DeleteColumnstoMakeSortedIII sortedIII = new DeleteColumnstoMakeSortedIII();
+        String[] A = new String[2];
+        A[0]="baabab";
+        A[1]="aaaaaa";
+        sortedIII.minDeletionSize(A);
+    }
 }
