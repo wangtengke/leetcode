@@ -37,10 +37,10 @@ public class FastSort {
                a[begin] = temp;
            }
        }
-       if(high>low)
-           sort(a,low,begin-1);
-       if(high>low)
-           sort(a,end+1,high);
+       if(high>low) {
+           sort(a, low, begin - 1);
+           sort(a, end + 1, high);
+       }
     }
 
 }
