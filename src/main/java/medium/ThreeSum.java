@@ -25,6 +25,14 @@ import java.util.List;
  **/
 public class ThreeSum {
 //    public List<List<Integer>> threeSum(int[] nums) {
-//
-//    }
+////
+////    }
+    public static void main(String[] args) {
+        StringBuffer sb1 = new StringBuffer("ab");
+        StringBuffer sb2 = new StringBuffer("ab");
+        String sb3 = new String("ab");
+        String sb4 = "ab";
+        System.out.println(sb1==sb2);
+        System.out.println(sb3.equals(sb4));
+    }
 }
