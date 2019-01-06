@@ -38,5 +38,6 @@ public class TargetSum {
             positive = S-nums[i];
             negative = S+nums[i];
         }
+        return 0;
     }
 }
