@@ -39,23 +39,23 @@ package contest.contest126;
  * @create: 2019-03-03
  **/
 public class MinimumCosttoMergeStones {
-    public int mergeStones(int[] stones, int K) {
-        if(K<2)
-            return -1;
-        int length = stones.length;
-        if(length%(K-1)==1||K==2){
-            while (length>1) {
-                int ans = 0;
-                for (int i = 0; i < length - K; i++) {
-                    int res = 0;
-                    for (int j = i; j < i + K; j++) {
-                        res += stones[j];
-                    }
-                    ans = Math.min(res, ans);
-                }
-            }
-        }
-        else
-            return -1;
-    }
+//    public int mergeStones(int[] stones, int K) {
+//        if(K<2)
+//            return -1;
+//        int length = stones.length;
+//        if(length%(K-1)==1||K==2){
+//            while (length>1) {
+//                int ans = 0;
+//                for (int i = 0; i < length - K; i++) {
+//                    int res = 0;
+//                    for (int j = i; j < i + K; j++) {
+//                        res += stones[j];
+//                    }
+//                    ans = Math.min(res, ans);
+//                }
+//            }
+//        }
+//        else
+//            return -1;
+//    }
 }
