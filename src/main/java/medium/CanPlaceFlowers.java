@@ -1,5 +1,9 @@
 package medium;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @program: leetcode
  * @description:
@@ -40,5 +44,6 @@ public class CanPlaceFlowers {
     public static void main(String[] args) {
         CanPlaceFlowers canPlaceFlowers = new CanPlaceFlowers();
         canPlaceFlowers.canPlaceFlowers(new int[]{1,0,1,0,1,0,1},1);
+        Set<Integer> set = new HashSet<>();
     }
 }

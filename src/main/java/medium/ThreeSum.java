@@ -1,5 +1,6 @@
 package medium;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,15 +25,38 @@ import java.util.List;
  * @create: 2018-12-12
  **/
 public class ThreeSum {
-//    public List<List<Integer>> threeSum(int[] nums) {
-////
-////    }
+    public int[] visited;
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> list = new ArrayList<>();
+        List<Integer> cur = new ArrayList<>();
+        visited = new int[nums.length];
+        dfs(0, nums, cur, list, 0);
+        return list;
+    }
+
+    public void dfs(int index, int[] nums, List<Integer> cur, List<List<Integer>> list, int target){
+        if(index == nums.length)
+            return;
+        if(target==0 && cur.size()==3){
+            list.add(new ArrayList<>(cur));
+            return;
+        }
+        if(cur.size()==3)
+            return;
+        for(int i=index; i<nums.length; i++){
+            if(visited[i]==0){
+                visited[i] = 1;
+                cur.add(nums[i]);
+                dfs(i+1, nums, cur, list, target-nums[i]);
+                cur.remove(cur.size()-1);
+                visited[i] = 0;
+            }
+
+        }
+    }
+
     public static void main(String[] args) {
-        StringBuffer sb1 = new StringBuffer("ab");
-        StringBuffer sb2 = new StringBuffer("ab");
-        String sb3 = new String("ab");
-        String sb4 = "ab";
-        System.out.println(sb1==sb2);
-        System.out.println(sb3.equals(sb4));
+        ThreeSum threeSum = new ThreeSum();
+        threeSum.threeSum(new int[]{-1, 0, 1, 2, -1, -4});
     }
 }

@@ -38,6 +38,6 @@ public class SubarraySumEqualsK {
 
     public static void main(String[] args) {
         SubarraySumEqualsK subarraySumEqualsK = new SubarraySumEqualsK();
-        System.out.println(subarraySumEqualsK.subarraySum(new int[]{1, 1, 1},2));
+        System.out.println(subarraySumEqualsK.subarraySum(new int[]{1, 2, 3, 4, 5, 6},7));
     }
 }

@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 /**
  * @program: leetcode
  * @description:
@@ -67,7 +69,6 @@ public class AddTwoNumbers {
         l1.next =l2;
 //        l2.next =l3;
 //        l4.next =l5;
-//        l5.next =l6;
          addTwoNumbers(l1,l4);
     }
 }
